@@ -1,10 +1,20 @@
-import Introduction from "./components/Introduction";
+import Category from "./Sidebar/Category/Category";
+import Navigation from "./Navigation/Nav";
+import Products from "./Products/Products";
+import Recommended from "./Recommended/Recommended";
+import Price from "./Sidebar/Price/Price";
+import Colors from "./Sidebar/Colors/Colors";
 
 function App(){
 
   return (
     <div>
-      <Introduction />
+      <Navigation/>
+      <Products />
+      <Recommended />
+      <Category />
+      <Price />
+      <Colors />
     </div>
   )
 }
