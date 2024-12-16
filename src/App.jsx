@@ -1,11 +1,10 @@
-import Category from "./Sidebar/Category/Category";
 import Navigation from "./Navigation/Nav";
 import Products from "./Products/Products";
 import Recommended from "./Recommended/Recommended";
 import Sidebar from "./Sidebar/Sidebar";
 import Card from "./components/Card"
 import { useState } from "react";
-
+import "./index.css"
 import products from "./db/data";
 
 function App() {
@@ -18,7 +17,7 @@ function App() {
   }
 
   const filteredItemsFromQuery = products.filter((product) =>
-    product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase() !== -1));
+    product.title.toLocaleLowerCase().indexOf(query.toLocaleLowerCase()) !== -1);
 
   // Category filter
   const handleChange = event => {
@@ -69,9 +68,9 @@ function App() {
   return (
     <div>
       <Sidebar handleChange={handleChange}/>
-      <Navigation />
-      <Recommended />
-      <Products />
+      <Navigation query={query} handleInputChange={handleInputChange}/>
+      <Recommended handleClick={handleClick}/>
+      <Products result={result}/>
     </div>
   )
 }
